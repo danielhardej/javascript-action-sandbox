@@ -17,7 +17,7 @@ async function run() {
   core.setOutput("joke-output", joke);
 
   const context = github.context;
-  const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+  const octokit = github.getOctokit(process.env.MY_PAT);
 
   await octokit.issues.createComment({
     owner: context.repo.owner,
