@@ -12,12 +12,12 @@ const core = require("@actions/core");
 const github = require("@actions/github");
 
 async function run() {
+  const context = github.context;
+  const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+
   const joke = await getJoke();
   console.log(joke);
   core.setOutput("joke-output", joke);
-
-  const context = github.context;
-  const octokit = github.getOctokit(process.env.MY_PAT);
 
   await octokit.issues.createComment({
     owner: context.repo.owner,
