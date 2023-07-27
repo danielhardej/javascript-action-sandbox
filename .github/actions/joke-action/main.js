@@ -14,9 +14,6 @@ const { context } = github.context;
 const token = core.getInput('GITHUB_TOKEN');
 // const GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
 const octokit = new github.getOctokit(token);
-const owner = core.getInput('owner');
-const repo = core.getInput('repo');
-const issue_number = core.getInput('issue_number');
 
 async function run() {
 
@@ -25,10 +22,10 @@ async function run() {
   core.setOutput("joke-output", joke);
 
   await octokit.rest.issues.createComment({
-    owner,
-    repo,
-    issue_number,
-    body: `Thank you for adding a label! We will try to review this as soon as we can.`
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    issue_number: context.issue.number,
+    body: 'Thank you for adding a label! We will try to review this as soon as we can.'
   });
 }
 

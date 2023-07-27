@@ -9,15 +9,6 @@ inputs:
     description: 'The token to use to access the GitHub API'
     required: true
     default: ${{ github.token }}
-  owner:
-    description: 'The owner of the repository'
-    required: true
-  repo:
-    description: 'The name of the repository'
-    required: true
-  issue_number:
-    description: 'The number of the issue'
-    required: true
 
 outputs:
   joke-output:
