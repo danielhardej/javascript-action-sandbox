@@ -1,23 +1,28 @@
 {
-    "name": "my-js-action",
-    "version": "1.0.0",
-    "description": "My JavaScript Action",
-    "main": "dist/index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/username/my-js-action.git"
-    },
-    "author": "Your Name",
-    "license": "MIT",
-    "dependencies": {
-        "@actions/core": "^1.2.4",
-        "@actions/github": "^2.1.2"
-    },
-    "devDependencies": {
-        "typescript": "^4.0.3"
-    },
-    "scripts": {
-        "build": "tsc",
-        "test": "echo \"No tests yet...\""
-    }
+  "name": "my-js-action",
+  "version": "1.0.0",
+  "description": "My JavaScript Action",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/my-js-action.git"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^2.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet...\""
+  },
+  "bugs": {
+    "url": "https://github.com/username/my-js-action/issues"
+  },
+  "homepage": "https://github.com/username/my-js-action#readme",
+  "keywords": []
 }
