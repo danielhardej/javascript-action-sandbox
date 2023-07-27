@@ -10,7 +10,7 @@
 const getJoke = require("./joke");
 const core = require("@actions/core");
 const github = require("@actions/github");
-const { context } = github.context;
+const { context = {} } = github;
 const token = core.getInput('GITHUB_TOKEN');
 // const GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
 const octokit = new github.getOctokit(token);
@@ -22,8 +22,7 @@ async function run() {
   core.setOutput("joke-output", joke);
 
   await octokit.rest.issues.createComment({
-    owner: 'danielhardej',
-    repo: 'javascript-action-sandbox',
+    ...context.repo,
     issue_number: context.issue.number,
     body: joke
   });
