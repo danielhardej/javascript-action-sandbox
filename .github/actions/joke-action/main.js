@@ -24,7 +24,7 @@ async function run() {
   await octokit.rest.issues.createComment({
     owner: 'danielhardej',
     repo: 'javascript-actions-sanbox',
-    issue_number: github.event.issue.number,
+    issue_number: '2',
     body: 'Thank you for adding a label! We will try to review this as soon as we can.'
   });
 }
