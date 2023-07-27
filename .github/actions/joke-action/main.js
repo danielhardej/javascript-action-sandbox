@@ -22,9 +22,9 @@ async function run() {
   core.setOutput("joke-output", joke);
 
   await octokit.rest.issues.createComment({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: context.issue.number,
+    owner: 'danielhardej',
+    repo: 'javascript-actions-sanbox',
+    issue_number: github.event.issue.number,
     body: 'Thank you for adding a label! We will try to review this as soon as we can.'
   });
 }
