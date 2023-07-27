@@ -4,6 +4,11 @@ name: "my joke action"
 
 description: "use an external API to retrieve and display a joke"
 
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token'
+    required: true
+
 outputs:
   joke-output:
     description: The resulting joke from the icanhazdadjokes API
