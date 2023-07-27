@@ -25,7 +25,7 @@ async function run() {
     owner: context.repo.owner,
     repo: context.repo.repo,
     issue_number: context.issue.number,
-    body: joke
+    body: 'Thank you for adding a label! We will try to review this as soon as we can.'
   });
 }
 
