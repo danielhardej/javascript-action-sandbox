@@ -23,8 +23,8 @@ async function run() {
 
   await octokit.rest.issues.createComment({
     // owner: context.repo.owner,
-    // repo: context.repo.repo,
-    // issue_number: context.issue.number,
+    repo: context.repo,
+    issue_number: issue.number,
     body: 'Thank you for adding a label! We will try to review this as soon as we can.'
   });
 }
