@@ -21,10 +21,10 @@ async function run() {
   console.log(joke);
   core.setOutput("joke-output", joke);
 
-  await octokit.issues.createComment({
-    // owner: context.repo.owner,
-    // repo: context.repo.repo,
-    // issue_number: context.issue.number,
+  await octokit.rest.issues.createComment({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    issue_number: context.issue.number,
     body: 'Thank you for adding a label! We will try to review this as soon as we can.'
   });
 }
