@@ -16,5 +16,3 @@ outputs:
 runs:
   using: "node16"
   main: "main.js"
-  with:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

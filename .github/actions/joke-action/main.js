@@ -13,7 +13,8 @@ const github = require("@actions/github");
 
 async function run() {
   const context = github.context;
-  const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+  const  GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
+  const octokit = github.getOctokit(GITHUB_TOKEN);
 
   const joke = await getJoke();
   console.log(joke);
