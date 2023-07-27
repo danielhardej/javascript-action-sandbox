@@ -14,5 +14,5 @@ jobs:
       - name: ha-ha
         uses: ./.github/actions/joke-action
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
 
