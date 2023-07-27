@@ -12,9 +12,11 @@ const core = require("@actions/core");
 const github = require("@actions/github");
 
 async function run() {
+
+  const token = core.getInput('GITHUB_TOKEN', { required: true });
   const context = github.context;
-  const  GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
-  const octokit = github.getOctokit(GITHUB_TOKEN);
+  // const GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
+  const octokit = new github.getOctokit(token);
 
   const joke = await getJoke();
   console.log(joke);
