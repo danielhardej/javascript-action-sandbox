@@ -8,6 +8,7 @@ inputs:
   GITHUB_TOKEN:
     description: 'The token to use to access the GitHub API'
     required: true
+    default: ${{ github.token }}
 
 outputs:
   joke-output:
@@ -16,3 +17,4 @@ outputs:
 runs:
   using: "node16"
   main: "main.js"
+

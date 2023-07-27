@@ -6,13 +6,14 @@ on:
 
 jobs:
   action:
-    if: ${{ !github.event.repository.is_template }}
+
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
       - name: ha-ha
         uses: ./.github/actions/joke-action
-        env:
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
